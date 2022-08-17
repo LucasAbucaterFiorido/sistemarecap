@@ -78,7 +78,7 @@
                         <div class="col-sm-8">
                             <label class="form-label" for="arquivoimg">Foto de Usuario:</label>
                             <br>
-                            <input class="form-control" type="file" id="arquivoimg" name="arquivoimg">
+                            <input class="form-control" type="file" id="arquivoimg" name="arquivoimg" onchange="previewImg(this)">
                         </div>
                         <div class="col-sm-4">
                             <label for="selectsts">Status:</label>
@@ -90,6 +90,16 @@
                         </div>
                     </div>
                     <br>
+                    <div class="row">
+                        <div class="col-sm-3 border">
+                            <img src="" alt="" id="preImg" style="max-width: 200px; max-height: 200px;">     
+                        </div>
+                        <div class="col-sm-9">
+                            <label class="form-label" for="base64Code">Base 64:</label>
+                            <br>
+                            <textarea class="form-control" id="base64Code" name="base64Code" cols="140" rows="6"></textarea>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-sm-12">
                             <label class="form-label" for="txtobs">Observação:</label>
@@ -115,7 +125,31 @@
     <script src="jquery-3.6.0.js"></script>
     <script src="../js/bootstrap.bundle.js"></script>
     <script>
-        
+        function previewImg(imagem) 
+        {
+            // let preview = $("#preImg");
+            // let file = $("#arquivoimg").file[0];
+            var preview = document.getElementById("preImg");
+            var file = document.getElementById("arquivoimg").files[0];
+            // console.log(preview);
+            let leitor = new FileReader();
+
+            leitor.onloadend = function(){
+                let caminho = leitor.result;
+
+                preview.src = caminho;
+                $("#base64Code").val(caminho);
+            }
+
+            if(file)
+            {
+                leitor.readAsDataURL(file);
+            }
+            else
+            {
+                preview.src = "";
+            }
+        }
     </script>
 </body>
 </html>
