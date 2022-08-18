@@ -36,7 +36,9 @@
         ));
         if($dados->rowCount() == 1)
         {
-            header('location: ../index.html');
+            // header('location: ../index.html');
+            echo "<p>Cadastro efetuado com sucesso!!</p>";
+            echo "<p id='CodCadastrado'>".$conn->lastInsertId()."</p>";
         }
     }
     catch(PDOException $erro)

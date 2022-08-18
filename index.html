@@ -108,6 +108,10 @@
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col-sm-12">
+                            <div id="callback"></div>
+                        </div>
+                    <div class="row">
                         <div class="col-sm-12 text-center">
                             <div class="card-footer">
                                 <button class="btn btn-success" formaction="usuario/cadastrar_usuario.php">Cadastrar</button>
@@ -124,32 +128,49 @@
     
     <script src="jquery-3.6.0.js"></script>
     <script src="../js/bootstrap.bundle.js"></script>
+    <script src="script_imagem.js"></script>
+    <script src="script_ajax.txt"></script>
     <script>
-        function previewImg(imagem) 
-        {
-            // let preview = $("#preImg");
-            // let file = $("#arquivoimg").file[0];
-            var preview = document.getElementById("preImg");
-            var file = document.getElementById("arquivoimg").files[0];
-            // console.log(preview);
-            let leitor = new FileReader();
+        $(function(){
+            callback = $("#callback");
+            action = "";
 
-            leitor.onloadend = function(){
-                let caminho = leitor.result;
-
-                preview.src = caminho;
-                $("#base64Code").val(caminho);
-            }
-
-            if(file)
+            function loading(datas)
             {
-                leitor.readAsDataURL(file);
-            }
-            else
+                callback.empty().html("Carregando...");
+            };
+
+            function cheirinho_de_sucesso(datas)
             {
-                preview.src = "";
-            }
-        }
+                callback.empty().html("<pre>"+ datas +"</pre>");
+                $("#txtcod").val($("#CodCadastrado").html());
+            };
+
+            function erro_enviar(datas)
+            {
+                callback.empty().html("Erro ao enviar.");
+            };
+
+            function limpar()
+            {
+                $("#txtcod").val("");
+                $("#txtnome").val("");
+                $("#txtlogin").val("");
+                $("#txtsenha").val("");
+                $("#arquivoimg").val("");
+                $("#selectsts").val("");
+                $("#base64Code").val("");
+                $("#txtobs").val("");
+            };
+
+            $.ajaxSetup({
+                type: 'POST',
+                beforeSend: loading,
+                error: erro_enviar,
+                success: cheirinho_de_sucesso
+            });
+
+        });
     </script>
 </body>
 </html>
