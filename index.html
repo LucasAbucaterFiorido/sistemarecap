@@ -33,7 +33,7 @@
                         <br>
                     </div>
                 </div>
-                <form action="" method="POST" id="form_usuario" name="form_usuario">
+                <form action="" method="POST" id="form_usuario" name="form_usuario" onsubmit="return false;">
                     <div class="row">
                         <div class="col-sm-3">
                             <label class="form-label" for="txtcod">Código:</label>
@@ -42,7 +42,7 @@
                         </div>
                         <div class="col-sm-2">
                             <p>&nbsp;</p>
-                            <p><button id="btoPesquisar" formaction="Usuario/pesquisar_usuario.php" class="btn btn-secondary">&#128269;</button></p>
+                            <p><button id="btt_pesquisar" class="btn btn-secondary">&#128269;</button></p>
                         </div>
                         <div class="col-sm-3">
                         </div>
@@ -114,10 +114,10 @@
                     <div class="row">
                         <div class="col-sm-12 text-center">
                             <div class="card-footer">
-                                <button class="btn btn-success" formaction="usuario/cadastrar_usuario.php">Cadastrar</button>
-                                <button class="btn btn-primary" formaction="usuario/alterar_usuario.php">Alterar</button>
-                                <button class="btn btn-warning" type="reset">Limpar</button>
-                                <button class="btn btn-danger" formaction="usuario/deletar_usuario.php">Excluir</button>
+                                <button class="btn btn-success" id="bttcadastrar">Cadastrar</button>
+                                <button class="btn btn-primary" id="bttalterar">Alterar</button>
+                                <button class="btn btn-warning" id="bttlimpar">Limpar</button>
+                                <button class="btn btn-danger" id="bttexcluir">Excluir</button>
                             </div>
                         </div>
                     </div>
@@ -127,50 +127,8 @@
     </div>
     
     <script src="jquery-3.6.0.js"></script>
-    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
     <script src="script_imagem.js"></script>
-    <script src="script_ajax.txt"></script>
-    <script>
-        $(function(){
-            callback = $("#callback");
-            action = "";
-
-            function loading(datas)
-            {
-                callback.empty().html("Carregando...");
-            };
-
-            function cheirinho_de_sucesso(datas)
-            {
-                callback.empty().html("<pre>"+ datas +"</pre>");
-                $("#txtcod").val($("#CodCadastrado").html());
-            };
-
-            function erro_enviar(datas)
-            {
-                callback.empty().html("Erro ao enviar.");
-            };
-
-            function limpar()
-            {
-                $("#txtcod").val("");
-                $("#txtnome").val("");
-                $("#txtlogin").val("");
-                $("#txtsenha").val("");
-                $("#arquivoimg").val("");
-                $("#selectsts").val("");
-                $("#base64Code").val("");
-                $("#txtobs").val("");
-            };
-
-            $.ajaxSetup({
-                type: 'POST',
-                beforeSend: loading,
-                error: erro_enviar,
-                success: cheirinho_de_sucesso
-            });
-
-        });
-    </script>
+    <script src="script_ajax.js"></script>
 </body>
 </html>

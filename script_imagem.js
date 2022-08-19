@@ -7,7 +7,8 @@ function previewImg(imagem)
     // console.log(preview);
     let leitor = new FileReader();
 
-    leitor.onloadend = function(){
+    leitor.onloadend = function()
+    {
         let caminho = leitor.result;
 
         preview.src = caminho;

@@ -38,7 +38,7 @@
         {
             // header('location: ../index.html');
             echo "<p>Cadastro efetuado com sucesso!!</p>";
-            echo "<p id='CodCadastrado'>".$conn->lastInsertId()."</p>";
+            echo "<p id='CodCadastrado'>".$cone->lastInsertId()."</p>";
         }
     }
     catch(PDOException $erro)
