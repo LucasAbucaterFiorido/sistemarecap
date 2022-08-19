@@ -32,7 +32,7 @@
 
         if($dados->rowCount() == 1)
         {
-            header('location: ../index.php');
+            echo "<p>Alterado com sucesso!!</p>";
         }
     }
     catch(PDOException $erro)

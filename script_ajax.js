@@ -1,42 +1,35 @@
 $(function(){
-    callback = $("#callback");
-    action = "";
+
+    var callback = $("#callback");
+    var action = "";
 
     function loading(datas)
     {
         callback.empty().html("Carregando...");
-    };
+    }
 
     function cheirinho_de_sucesso(datas)
     {
         callback.empty().html("<pre>"+ datas +"</pre>");
         $("#txtcod").val($("#CodCadastrado").html());
-    };
+    }
 
     function erro_enviar(datas)
     {
         callback.empty().html("Erro ao enviar.");
-    };
+    }
 
-    function limpar()
-    {
-        $("#txtcod").val("");
-        $("#txtnome").val("");
-        $("#txtlogin").val("");
-        $("#txtsenha").val("");
-        $("#arquivoimg").val("");
-        $("#selectsts").val("");
-        $("#base64Code").val("");
-        $("#txtobs").val("");
-    };
-
-
-    $.ajaxSetup({
-        type: 'POST',
-        beforeSend: loading,
-        error: erro_enviar,
-        success: cheirinho_de_sucesso
-    });
+    // function limpar()
+    // {
+    //     $("#txtcod").val("");
+    //     $("#txtnome").val("");
+    //     $("#txtlogin").val("");
+    //     $("#txtsenha").val("");
+    //     $("#arquivoimg").val("");
+    //     $("#selectsts").val("");
+    //     $("#base64Code").val("");
+    //     $("#txtobs").val("");
+    // }
 
     function successPesquisa(datas)
     {
@@ -57,13 +50,20 @@ $(function(){
         preview.src = $("#imagem_pesquisa").html();
     }
 
+    $.ajaxSetup({
+        type:           'POST',
+        beforeSend:     loading,
+        error:          erro_enviar,
+        success:        cheirinho_de_sucesso
+    })
+
     $("#bttcadastrar").click(function()
     {
         action = "Usuario/cadastrar_usuario.php";
         
 
         $.ajax({
-            url: action,
+            url:        action,
             data:{
                 txtnome: $("#txtnome").val(),
                 txtlogin: $("#txtlogin").val(),
@@ -72,21 +72,39 @@ $(function(){
                 selectsts: $("#selectsts").val(),
                 txtobs: $("#txtobs").val()
             }
-
         });
     });
+
     $("#bttpesquisar").click(function()
     {
         action= "Usuario/pesquisar_usuario.php";
 
         $.ajax({
-            url: action,
+            url:    action,
             data:{
-                txtcod:$('#txtcod').val()
+                txtcod: $("#txtcod").val()
             },
-            success: successPesquisa
+            success:    cheirinho_de_sucesso
         });
     });
+
+    $("bttalterar").click(function(){
+
+        action = "Usuario/alterar_usuario.php";
+
+        $.ajax({
+            url:    action,
+            data:{
+                txtcod: $("#txtcod").val(),
+                txtnome: $("#txtnome").val(),
+                txtlogin: $("#txtlogin").val(),
+                txtsenha: $("#txtsenha").val(),
+                arquivoimg: $("#base64Code").val(),
+                selectsts: $("#selectsts").val(),
+                txtobs: $("#txtobs").val()
+            }
+        });
+    })
     
 
 });

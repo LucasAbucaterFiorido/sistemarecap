@@ -11,7 +11,8 @@
 
         if($dados->rowCount() == 1)
         {
-            header('location: ../index.php');
+            // <p onload="limpar()">Deletado com sucesso!!</p>
+            echo "<p>Deletado com sucesso!!</p>";
         }
     }
     catch(PDOException $erro)
