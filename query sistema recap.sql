@@ -8,13 +8,14 @@ create table usuario
     nome_usuario varchar(25) not null,
     login_usuario varchar(25) unique not null,
     senha_usuario varchar(255) not null,
-	imagem_usuario blob not null,
+	imagem_usuario longblob not null,
     cadastro_usuario timestamp not null,
     obs_usuario varchar(255) null,
     status_usuario varchar(10) not null
 );
 
 select * from usuario;
+
 
 create table fornecedor
 (
