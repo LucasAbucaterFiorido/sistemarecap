@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../estilo.css">
-    <link rel="stylesheet" href="../css/bootstrap.css">
     <title>Produto</title>
 </head>
 <body>
@@ -117,10 +110,10 @@
                     <div class="row">
                         <div class="col-sm-12 text-center">
                             <div class="card-footer">
-                                <button class="btn btn-success" formaction="cadastrar_produto.php">Cadastrar</button>
-                                <button class="btn btn-primary" formaction="alterar_produto.php">Alterar</button>
-                                <button class="btn btn-warning" type="reset">Limpar</button>
-                                <button class="btn btn-danger" formaction="deletar_produto.php">Excluir</button>
+                                <button class="btn btn-success" id="btt_cadastrar">Cadastrar</button>
+                                <button class="btn btn-primary" id="btt_alterar">Alterar</button>
+                                <button class="btn btn-warning" id="btt_limpar">Limpar</button>
+                                <button class="btn btn-danger" id="btt_excluir">Excluir</button>
                             </div>
                         </div>
                     </div>
@@ -128,7 +121,3 @@
             </div>
         </div>
     </div>
-    
-    <script src="../js/bootstrap.bundle.js"></script>
-</body>
-</html>
