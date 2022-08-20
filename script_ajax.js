@@ -11,7 +11,7 @@ $(function(){
     function cheirinho_de_sucesso(datas)
     {
         callback.empty().html("<pre>"+ datas +"</pre>");
-        $("#txtcod").val($("#CodCadastrado").html());
+        $("#txtcod").val($("#cod_pesquisa").html());
     }
 
     function erro_enviar(datas)
@@ -35,7 +35,7 @@ $(function(){
     {
         callback.empty().html("<pre>"+ datas +"</pre>");
 
-        $("#txtcod").val($("#CodCadastrado").html());
+        $("#txtcod").val($("#cod_pesquisa").html());
         $("#txtnome").val($("#nome_pesquisa").html());
         $("#txtlogin").val($("#login_pesquisa").html());
         $("#txtsenha").val($("#senha_pesquisa").html());
@@ -57,10 +57,22 @@ $(function(){
         success:        cheirinho_de_sucesso
     })
 
-    $("#bttcadastrar").click(function()
+    $("#btt_pesquisar").click(function()
+    {
+        action= "Usuario/pesquisar_usuario.php";
+
+        $.ajax({
+            url:    action,
+            data:{
+                txtcod: $("#txtcod").val()
+            },
+            success:    successPesquisa
+        });
+    });
+
+    $("#btt_cadastrar").click(function()
     {
         action = "Usuario/cadastrar_usuario.php";
-        
 
         $.ajax({
             url:        action,
@@ -75,21 +87,8 @@ $(function(){
         });
     });
 
-    $("#bttpesquisar").click(function()
+    $("#btt_alterar").click(function()
     {
-        action= "Usuario/pesquisar_usuario.php";
-
-        $.ajax({
-            url:    action,
-            data:{
-                txtcod: $("#txtcod").val()
-            },
-            success:    cheirinho_de_sucesso
-        });
-    });
-
-    $("bttalterar").click(function(){
-
         action = "Usuario/alterar_usuario.php";
 
         $.ajax({
@@ -104,7 +103,9 @@ $(function(){
                 txtobs: $("#txtobs").val()
             }
         });
-    })
+    });
+
+
     
 
 });

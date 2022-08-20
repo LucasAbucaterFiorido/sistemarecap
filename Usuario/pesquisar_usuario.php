@@ -14,7 +14,7 @@
                 echo "<pre>";
                 // print_r($linha[2]);
                 // print_r($linha['login_usuario']);
-                print_r("<p id='CodCadastrado'>".$linha['codigo_usuario']."</p>");
+                print_r("<p id='cod_pesquisa'>".$linha['codigo_usuario']."</p>");
                 print_r("<p id='nome_pesquisa'>".$linha['nome_usuario']."</p>");
                 print_r("<p id='login_pesquisa'>".$linha['login_usuario']."</p>");
                 print_r("<p id='senha_pesquisa'>".$linha['senha_usuario']."</p>");

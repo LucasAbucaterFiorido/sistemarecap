@@ -1,0 +1,85 @@
+<div class="row">
+    <div class="col-sm-12 text-center">
+        <h1 class="card-title"><u>Formulário Usuario</u></h1>
+        <hr>
+        <br>
+    </div>
+</div>
+<form action="" method="POST" id="form_usuario" name="form_usuario" onsubmit="return false;">
+    <div class="row">
+        <div class="col-sm-3">
+            <label class="form-label" for="txtcod">Código:</label>
+            <br>
+            <input class="form-control" type="text" id="txtcod" name="txtcod">
+        </div>
+        <div class="col-sm-2">
+            <p>&nbsp;</p>
+            <p><button id="btt_pesquisar" class="btn btn-secondary">&#128269;</button></p>
+        </div>
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-4">
+            <label class="form-label" for="txtdata">Data de Cadastro:</label>
+            <br>
+            <input class="form-control" type="date" id="txtdata" name="txtdata">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-12">
+            <label class="form-label" for="txtnome">Nome:</label>
+            <br>
+            <input class="form-control" type="text" id="txtnome" name="txtnome">   
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-6">
+            <label class="form-label" for="txtlogin">Login:</label>
+            <br>
+            <input class="form-control" type="text" id="txtlogin" name="txtlogin">   
+        </div>
+        <div class="col-sm-6">
+            <label class="form-label" for="txtsenha">Senha:</label>
+            <br>
+            <input class="form-control" type="text" id="txtsenha" name="txtsenha">   
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-8">
+            <label class="form-label" for="arquivoimg">Foto de Usuario:</label>
+            <br>
+            <input class="form-control" type="file" id="arquivoimg" name="arquivoimg" onchange="previewImg(this)">
+        </div>
+        <div class="col-sm-4">
+            <label for="selectsts">Status:</label>
+            <br>
+            <select class="form-control mt-2" name="selectsts" id="selectsts">
+                <option value="Ativo">Ativo</option>
+                <option value="Desativo">Desativo</option>
+            </select> 
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-3 border">
+            <img src="" alt="" id="preImg" style="max-width: 200px; max-height: 200px;">     
+        </div>
+        <div class="col-sm-9">
+            <label class="form-label" for="base64Code">Base 64:</label>
+            <br>
+            <textarea class="form-control" id="base64Code" name="base64Code" cols="140" rows="6"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <label class="form-label" for="txtobs">Observação:</label>
+            <br>
+            <textarea class="form-control" id="txtobs" name="txtobs" cols="140" rows="6"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="callback"></div>
+        </div>

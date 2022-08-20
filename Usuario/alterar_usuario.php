@@ -8,7 +8,7 @@
     $imagem_usuario = $_POST['arquivoimg'];
     $obs_usuario = $_POST['txtobs'];
     $status_usuario = $_POST['selectsts'];
-
+    
 
     try
     {
