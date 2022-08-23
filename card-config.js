@@ -4,23 +4,56 @@
 //     $("#teste").load("../sistemarecap/Produto/form_produto.php");
 // })
 
-
-$("#aba_usuario").click(function()
+$(window).on("load", function()
 {
-    $("#teste").load("Usuario/form_usuario.html");
+    $("#aba_usuario").click(function()
+    {
+        $("#teste").load("Usuario/form_usuario.html");
+    });
+
+    $("#aba_fornecedor").click(function()
+    {
+        $("#teste").load("Fornecedor/form_fornecedor.html");
+    });
+
+    $("#aba_categoria").click(function()
+    {
+        $("#teste").load("Categoria/form_categoria.html");
+    });
+
+    $("#aba_produto").click(function()
+    {
+        $("#teste").load("Produto/form_produto.php");
+    });    
 });
 
-$("#aba_fornecedor").click(function()
-{
-    $("#teste").load("Fornecedor/form_fornecedor.html");
-});
+// $(document).ready(function()
+// {
+//     $("#aba_usuario").click(function()
+//     {
+//         $("#teste").load("Usuario/form_usuario.html");
+//     });
 
-$("#aba_categoria").click(function()
-{
-    $("#teste").load("Categoria/form_categoria.php");
-});
+//     $("#aba_fornecedor").click(function()
+//     {
+//         $("#teste").load("Fornecedor/form_fornecedor.html");
+//     });
 
-$("#aba_produto").click(function()
-{
-    $("#teste").load("Produto/form_produto.php");
-});
+//     $("#aba_categoria").click(function()
+//     {
+//         $("#teste").load("Categoria/form_categoria.html");
+//     });
+
+//     $("#aba_produto").click(function()
+//     {
+//         $("#teste").load("Produto/form_produto.php");
+//     }); 
+// })
+
+
+
+// vai carregar os scripts apenas depois carregar toda tela, ação necessaria por colocar os scripts no head. Tudo dentro do head não aparece quando inspecionam a pagina no google.
+// $(document).load(function()
+// {
+
+// })
