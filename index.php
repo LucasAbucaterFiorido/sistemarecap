@@ -1,3 +1,4 @@
+<?php include_once("../sistemarecap/login/login_validar.php"); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,12 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo.css">
     <link rel="stylesheet" href="css/bootstrap.css">
-   <title id="titulo_head"></title> 
-   <script src="jquery-3.6.0.js"></script>
-    <script src="js/bootstrap.bundle.js"></script>
-    <script src="card-config.js"></script>
-    <script src="script_imagem.js"></script>
-    <script src="script_ajax.js"></script> 
+    <!-- <title id="titulo_head"></title>  -->
 </head>
 <body>
     <div class="container">
@@ -19,7 +15,7 @@
             <div class="card-header">
                 <ul class="nav nav-tabs card-header-tabs">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#" id="aba_usuario">Usuario</a>
+                        <a class="nav-link" href="#" id="aba_usuario">Usuario</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" id="aba_fornecedor">Fornecedor</a>
@@ -37,5 +33,10 @@
             </div>
         </div>
     </div>
+    <script src="jquery-3.6.0.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="card-config.js"></script>
+    <!-- <script src="script_ajax.js"></script> -->
+    <script src="script_imagem.js"></script> 
 </body>
 </html>

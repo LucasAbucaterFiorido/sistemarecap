@@ -19,10 +19,10 @@
                 print_r("<p id='login_pesquisa'>".$linha['login_usuario']."</p>");
                 print_r("<p id='senha_pesquisa'>".$linha['senha_usuario']."</p>");
                 print_r("<p id='imagem_pesquisa'>".$linha['imagem_usuario']."</p>");
-                print_r("<p id='cadastro_pesquisa'>".$linha['cadastro_usuario']."</p>");
+                // print_r("<p id='cadastro_pesquisa'>".$linha['cadastro_usuario']."</p>");
+                print_r("<p id='cadastro_pesquisa'>".substr($linha['cadastro_usuario'],0,10)."</p>");
                 print_r("<p id='obs_pesquisa'>".$linha['obs_usuario']."</p>");
                 print_r("<p id='status_pesquisa'>".$linha['status_usuario']."</p>");
-
 
                 echo "</pre>";
             }

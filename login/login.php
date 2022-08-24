@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="../estilo.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
     <title>Login</title>
 </head>
 <body>
@@ -16,9 +16,10 @@
             $login = $_POST['txtlogin'];
             $senha = $_POST['txtsenha'];
 
+            
             try 
             {
-                $consulta = $cone->query("SELECT * FROM usuario WHERE login_usuario = $login senha_usuario = $senha");
+                $consulta = $cone->query("SELECT * FROM usuario WHERE login_usuario = '$login' and senha_usuario = '$senha'");
 
                 if($consulta->rowCount() == 1)
                 {
@@ -29,26 +30,31 @@
                         $_SESSION['cod_sessao'] = $linha[0];
                         $_SESSION['nome_sessao'] = $linha[1];
                         $_SESSION['login_sessao'] = $linha[2];
-                        header('location: ../index.html');
+                        
+                        header("location: ../index.php");
+
+                        echo "seja bem vindo";
                     }
+                }else{
+                    echo "usuário ou senha inválido";
                 }
 
             } 
-            catch (\Throwable $th) 
+            catch (PDOException $erro) 
             {
-                //throw $th;
+                echo "Erro: " .$erro->getMessage();
             }
         }
         
 
         
     ?>
-    <form action="" method="">
+    <form action="" class="form-control" method="POST">
         <label for="txtlogin">Login</label>
         <input type="text" id="txtlogin" name="txtlogin">
         <label for="txtsenha">Senha</label>
         <input type="text" id="txtsenha" name="txtsenha">
-        <button type="submit">Enviar</button>
+        <button type="submit" formaction="login.php">Enviar</button>
     </form>
 </body>
 </html>

@@ -1,5 +1,5 @@
 $(function(){
-
+    alert("teste");
     var callback = $("#callback");
     var action = "";
 
