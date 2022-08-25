@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 if($_SESSION)
@@ -8,6 +9,10 @@ if($_SESSION)
         $cod_sessao = $_SESSION['cod_sessao'];
         $nome_sessao = $_SESSION['nome_sessao'];
         $login_sessao = $_SESSION['login_sessao'];
+
+        // testes
+        // $teste = "eu sei la porra";
+        // $GLOBALS ['0'] = $teste;
     }
     else
     {

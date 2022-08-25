@@ -90,6 +90,11 @@
         </div>
     </div>
     <br>
+    <?php
+        //testes
+        //print_r($GLOBALS[0]);
+    ?>
+    <br>
     <div class="row">
         <div class="col-sm-12 text-center">
             <div class="card-footer">
