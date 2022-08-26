@@ -8,7 +8,7 @@ $(window).on("load", function()
 {
     $("#aba_usuario").click(function()
     {
-        $("#teste").load("Usuario/form_usuario.html");
+        $("#teste").load("Usuario/form_usuario.php");
 
         $("#aba_usuario").addClass("active");
         $("#aba_fornecedor").removeClass("active");
