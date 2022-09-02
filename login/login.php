@@ -35,7 +35,9 @@
 
                         echo "seja bem vindo";
                     }
-                }else{
+                }
+                else
+                {
                     echo "usuário ou senha inválido";
                 }
 
