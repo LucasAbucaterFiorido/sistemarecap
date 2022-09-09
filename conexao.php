@@ -1,6 +1,6 @@
 <?php
 $host = "localhost";
-$bd = "bd_sistemarecap";
+$bd = "bd_rafael";
 $user = "root";
 $pass = "";
 
