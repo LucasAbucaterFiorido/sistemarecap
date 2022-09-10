@@ -11,7 +11,7 @@
 
         if($dados->rowCount() == 1)
         {
-            header('location: form_produto.php');
+            header('location: ');
         }
     }
     catch(PDOException $erro)
