@@ -18,7 +18,7 @@
             </div>
             <div class="col-sm-2">
                 <p>&nbsp;</p>
-                <p><button id="btoPesquisar" formaction="pesquisar_produto.php" class="btn btn-secondary">&#128269;</button></p>
+                <p><button id="btt_pesquisar" class="btn btn-secondary">&#128269;</button></p> <!-- formaction="pesquisar_produto.php" -->
             </div>
             <div class="col-sm-3">
             </div>
@@ -191,7 +191,7 @@
             beforeSend:     loading,
             error:          erro_enviar,
             success:        cheirinho_de_sucesso
-        })
+        });
 
         $("#btt_pesquisar").click(function()
         {
